@@ -40,8 +40,9 @@ app.use('/',basics);
 app.use('/data',database);
 app.use('/stock',stock);
 
-app.listen(3012,function(){
-	console.log("Server Listening on port:3012");
+var port=process.env.PORT || 8080;
+app.listen(port,function(){
+//	console.log("Server Listening on port:3012");
 });
 
 module.exports=app;
