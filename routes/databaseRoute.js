@@ -1,17 +1,17 @@
 var express=require('express');
 var router=express.Router();
 var path=require('path');
-//var MongoClient = require('mongodb').MongoClient;
-//var assert = require('assert');
-//var ObjectId = require('mongodb').ObjectID;
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+var ObjectId = require('mongodb').ObjectID;
 //var url = 'mongodb://HbMongo:786_Hatim#mlab@ds137760.mlab.com:37760/user';
 
-
+var url ='mongodb://localhost:27017/user';
 
 router.post("/register",function(req,res,next){
 
 console.log(req.body.Name)
-/*var detailes={Name:req.body.Name,LastName:req.body.LastName,Password:req.body.Password,Address:req.body.Address ,MobileNo:req.body.MobileNo ,EmailId:req.body.EmailId,Country:req.body.Country,City:req.body.City};
+var detailes={Name:req.body.Name,LastName:req.body.LastName,Password:req.body.Password,Address:req.body.Address ,MobileNo:req.body.MobileNo ,EmailId:req.body.EmailId,Country:req.body.Country,City:req.body.City};
 
 
 var insertdoc = function(db, callback) {
@@ -26,14 +26,14 @@ MongoClient.connect(url, function(err, db) {
       db.close();
   });
 
-});*/
+});
 });
 
 
 
 router.post("/update",function(req,res,next){
   console.log("update");
-/*
+
 
 console.log(req.session.EmailId);
 
@@ -51,13 +51,13 @@ MongoClient.connect(url, function(err, db) {
       db.close();
   });
 
-});*/
+});
 });
 
 
 router.post("/login",function(req,res,next){
 console.log("Asdf")
-/*var id = req.body.EmailId;
+var id = req.body.EmailId;
 console.log("email",id)
 var pass= req.body.Password
 console.log("pass",pass)
@@ -88,7 +88,7 @@ MongoClient.connect(url, function(err, db) {
       db.close();
   });
 });
-*/
+
 });
 
 

@@ -3,13 +3,30 @@ var router=express.Router();
 var path=require('path');
 
 
+router.get("/table",function(req,res,next){
 
-
-
-router.get("/",function(req,res,next){
-res.render('front');
+res.render('getQt')
 });
 
+router.get("/getQuotes",function(req,res,next){
+console.log("hii")
+
+
+ var python = require('child_process').spawn(
+     'python',
+     // second argument is array of parameters, e.g.:
+     ["/home//hatim/Documents/workspace/MajorProject/script.py"]);
+     var output = "";
+     python.stdout.on('data', function(data){ output += data });
+     python.on('close', function(code){ 
+       if (code !== 0) {  
+           return res.send(500, code); 
+       }
+       console.log(output)
+      return res.json(output);
+     });
+   
+  });
 router.get("/loginview",function(req,res,next){
 res.render('login');
 });

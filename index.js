@@ -42,7 +42,7 @@ app.use('/stock',stock);
 
 var port=process.env.PORT || 8080;
 app.listen(port,function(){
-//	console.log("Server Listening on port:3012");
+console.log("Server Listening on port:8080");
 });
 
 module.exports=app;
