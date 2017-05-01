@@ -1,43 +1,90 @@
 <!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+
+
 <body>
 
 <div ng-app="myApp" ng-controller="myCtrl"> 
 
 <p>Today's welcome message is:</p>
 
-<ul ng-repeat="x in names">
-<li> {{x.records.Country}}</li>
-</ul>
- 
-
+<p id='demo'></p>
 
 </div>
 
 <p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
 
+
+
+
 <script>
 
+/*
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);
+        alert(myObj["Name"])
+        //alert(myObj.record[1].Name);
+        //document.getElementById("demo").innerHTML = myObj.record[1].Name;
+    }
+};
+xmlhttp.open("GET", "/stock/getQuotes", true);
+xmlhttp.send();*/
 
-var app = angular.module('myApp', []);
+var app = angular.module('myApp', [])
 app.controller('myCtrl',function($scope, $http) {
-  $scope.Country = [];
 
-  $http.get("../sample.json").then(function(response){
-  	$scope.Country=response;
-  	console.log(Country);
-  })
 
-  $http.get("/stock/getQuotes")
-  .then(function(response) {
-  	$scope.names={};
-     $scope.names= response.data;
-     console.log(names);
+  $http.get("/stock/getQuotes").success(function (response, status)  {
+ 
+//var text = '{"employees":[{"firstName":"John","lastName":"Doe"},{"firstName":"Anna","lastName":"Smith"},{"firstName":"Peter","lastName":"Jones" }]}';
+    
+document.getElementById("demo").innerHTML =response+"res"
+var obj = JSON.parse(response);
+data=obj["data"]
+document.getElementById("demo").innerHTML=data+"data"
+ var z = document.createElement("TABLE");
+    z.setAttribute("id", "myTable");
+    document.body.appendChild(z);
+   
+   
+
+for(var row=0;row< data.length;row++){
+    z = document.createElement("TR");
+    z.setAttribute("id", "myTr"+row);
+    document.getElementById("myTable").appendChild(z);
+
+//document.getElementById("myTr"+row).innerHTML=data[row].quotes[0];
+    var record=[data[row].quotes[0].Symbol,data[row].quotes[1].volume,data[row].quotes[1].open,data[row].quotes[1].close,data[row].quotes[1].high,data[row].quotes[1].low]
+//document.getElementById("myTr"+row).innerHTML=record
+    
+    for(var col=0;col<record.length;col++){
+
+     z = document.createElement("TD");
+   
+  	 z.setAttribute("id", "myTd"+row+col);
+
+   
+
+    document.getElementById("myTr"+row).appendChild(z);
+     document.getElementById("myTd"+row+col).innerHTML=record[col];
+
+
+   }
+
+
+}
+    
   });
 
 });
 </script>
+
+
 
 </body>
 </html>

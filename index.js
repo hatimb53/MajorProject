@@ -40,7 +40,7 @@ app.use('/',basics);
 app.use('/data',database);
 app.use('/stock',stock);
 
-var port=process.env.PORT || 8080;
+var port=process.env.PORT || 8081;
 app.listen(port,function(){
 console.log("Server Listening on port:8080");
 });
