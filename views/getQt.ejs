@@ -43,10 +43,10 @@ app.controller('myCtrl',function($scope, $http) {
  
 //var text = '{"employees":[{"firstName":"John","lastName":"Doe"},{"firstName":"Anna","lastName":"Smith"},{"firstName":"Peter","lastName":"Jones" }]}';
     
-document.getElementById("demo").innerHTML =response+"res"
+//document.getElementById("demo").innerHTML =response+"res"
 var obj = JSON.parse(response);
 data=obj["data"]
-document.getElementById("demo").innerHTML=data+"data"
+//document.getElementById("demo").innerHTML=data+"data"
  var z = document.createElement("TABLE");
     z.setAttribute("id", "myTable");
     document.body.appendChild(z);

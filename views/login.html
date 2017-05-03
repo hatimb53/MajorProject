@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Here</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="assets/css/main.css" /> 
+		<link rel="stylesheet" href="assets/css/grid.css" /> 
+		<link rel="stylesheet" href="assets/css/animate.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+			// Load Charts and the corechart package.
+     		 google.charts.load('current', {'packages':['corechart']});
+
+     		 google.charts.setOnLoadCallback(drawBackgroundColor);
+     		 google.charts.setOnLoadCallback(drawBackgroundColor1);
+		</script>
+
+		<link href="assets/css/hover.css" rel="stylesheet" media="all">
+		<!--<link rel="stylesheet" href="assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="assets/css/bootstrap-min.css" />
+		<link rel="stylesheet" href="assets/css/bootstrap-theme.css" /> -->  
+		<link rel="icon" href="images/favicon.png"> 
+		
+</head>
+<body>
+			<header id="header" style="border-bottom: 2px solid rgba(255, 255, 255, 0.2); padding-bottom: 95px;">
+				<div class="inner">
+					<img src="images/logo.png" style="position: absolute; left: -9px; ">
+					<a href="index.html" class="logo" style="left: 72px; top: 10px; font-size: 25px; font-family: 'Special Elite', cursive""> <strong>STOCK ANALYSIS AND PREDICTION</strong> SOFTWARE</a>
+					<nav id="nav">
+						
+						<div class="tooltip hvr-wobble-horizontal"><a href="/"><img src="images/home.png"><span class="tooltiptext">Home</span></a></div>
+
+						<div class="tooltip hvr-wobble-horizontal">
+							<a href="/loginview">
+								<img src="images/login.png">
+									<span class="tooltiptext">Login</span>
+							</a>
+						</div>
+
+
+						<div class="tooltip hvr-wobble-horizontal" ><a href="/registerview"><img src="images/register.png"><span class="tooltiptext">Register</span></a></div> 				
+					
+							</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+			
+
+	<div id="login">
+	
+		<div class="w3-container" style="margin-top: 13%; margin-bottom: 13%;">
+
+			  <h2 style="color: white;"><center>Welcome Back</center></h2>
+			  <center><button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-large" style="color: #fff !important;">Click here to Login</button></center>
+
+			  <div id="id01" class="w3-modal">
+			    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+			      <div class="w3-center"><br>
+			        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+			        <h2>Login</h2>
+			      </div>
+
+			      <form class="w3-container" method="POST" action="/data/login">
+			        <div class="w3-section">
+			          <label><b>Username</b></label>
+			          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="EmailId" required>
+			          <label><b>Password</b></label>
+			          <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="Password" required>
+			          <input class="w3-button w3-block w3-green w3-section w3-padding" value="Login" type="submit">
+			         
+			        </div>
+			      </form>
+
+			      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+			        <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+			        <span class="w3-right w3-padding w3-hide-small"><a href="#">Forgot password?</a></span>
+			      </div>
+
+			    </div>
+			  </div>
+		</div>
+		
+
+	</div>
+</body>
+</html>

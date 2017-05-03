@@ -1,6 +1,6 @@
 import urllib3
 import json
-from pprint import pprint
+
 http = urllib3.PoolManager()
 
 import random
@@ -17,7 +17,7 @@ with open('companylist.csv', 'rb') as csvfile:
 
 		#print record[0]
 		count=count+1
-		if count>50:
+		if count>=10:
 			break
 		#print count
 		if(b):
@@ -43,8 +43,8 @@ with open('companylist.csv', 'rb') as csvfile:
 				
 				
 				continue
-			except:
-				#print "error"
+			except :
+				#print e
 				continue
 		if count<10:
 			b=True

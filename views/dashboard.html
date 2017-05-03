@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <title>User Profile</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+          <link rel="stylesheet" href="assets/css/main.css" /> 
+          <link rel="stylesheet" href="assets/css/grid.css" /> 
+          <link rel="stylesheet" href="assets/css/animate.css">
+          <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+          <script type="text/javascript">
+            // Load Charts and the corechart package.
+               google.charts.load('current', {'packages':['corechart']});
+
+               google.charts.setOnLoadCallback(drawBackgroundColor);
+               google.charts.setOnLoadCallback(drawBackgroundColor1);
+          </script>
+
+          <link href="assets/css/hover.css" rel="stylesheet" media="all">
+          <!--<link rel="stylesheet" href="assets/css/bootstrap.css" />
+          <link rel="stylesheet" href="assets/css/bootstrap-min.css" />
+          <link rel="stylesheet" href="assets/css/bootstrap-theme.css" /> -->  
+          <link rel="icon" href="images/favicon.png"> 
+ 
+  </head>
+    <body>
+
+    <header id="header" style="border-bottom: 2px solid rgba(255, 255, 255, 0.2); padding-bottom: 95px;">
+        <div class="inner">
+          <img src="images/logo.png" style="position: absolute; left: -9px; ">
+          <a href="index.html" class="logo" style="left: 72px; top: 10px; font-size: 25px; font-family: 'Special Elite', cursive""> <strong>STOCK ANALYSIS AND PREDICTION</strong> SOFTWARE</a>
+          <!--<nav id="nav">
+            
+            <div class="tooltip hvr-wobble-horizontal"><a href="index.html"><img src="images/home.png"><span class="tooltiptext">Home</span></a></div>
+
+            <div class="tooltip hvr-wobble-horizontal">
+              <a href="login.html">
+                <img src="images/login.png">
+                  <span class="tooltiptext">Login</span>
+              </a>
+            </div>
+
+
+            <div class="tooltip hvr-wobble-horizontal" ><a href="index.html"><img src="images/register.png"><span class="tooltiptext">Register</span></a></div>         
+          
+              </nav>-->
+          <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+        </div>
+      </header>
+
+   <div id="login">     
+        <div class="container" style="margin-top: 15px;">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#market" style="text-decoration: none;">Market</a></li>
+            <li><a data-toggle="tab" href="#menu" style="text-decoration: none;">Recommandations</a></li>
+            
+          </ul>
+
+          <div class="tab-content">
+            <div id="market" class="tab-pane fade in active">
+              <center><h3 style="color: #fff;">Market</h3></center>
+              <p>Table Here</p>
+            </div>
+            <div id="menu" class="tab-pane fade" style="color: #fff;">
+              <h3>Enter Details</h3>
+              <br>
+              <table class="table" border="0" width="400" style="margin-left: 12;">
+           
+            <tbody>
+                <tr>
+                    <td>
+                        <p style="font-size: 24px">Sector</p>
+                       
+                          
+                            <select style="width: 180px; height: 25px; color: black;">
+                                <option value="auto">Automative Sector</option>
+                                <option value="banking">Banking Sector</option>
+                                <option value="chemical">Chemical Sector</option>
+                                <option value="energy">Energy Sector</option>
+                                <option value="finance">Financial Sector</option>
+                                <option value="health">Health Care Sector</option>
+                                <option value="it">IT Sector</option>
+                                <option value="industry">Industrial Sector</option>
+                                <option value="telcom">Telcom Sector</option>
+                            </select>
+                        
+                        
+                    </td>
+                    
+                
+                    <td>
+                        <p style="font-size: 24px">Investment Duration</p>
+                        <select style="width: 180px; height: 25px; color: black;">
+                            <option value="less1">Less than 1 Year</option>
+                            <option value="1">1 Year</option>
+                            <option value="5">5 Year</option>
+                            <option value="above5">Above 5 Year</option>
+                        </select>
+                    </td>
+                
+                    <td>
+                        <p style="font-size: 24px">Investment Amount</p>
+                        <select style="width: 180px; height: 25px; color: black;">
+                            <option value="lessthan1">Less than 1 lakh</option>
+                            <option value="1">1 lakh</option>
+                            <option value="5">5 lakh</option>
+                            <option value="morethan5">Above 5 lakh</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <p style="font-size: 24px">Another Option</p>
+                        <select style="width: 180px; height: 25px; color: black;">
+                            <option value="lessthan1">op1</option>
+                            <option value="1">op2</option>
+                            <option value="5">op3</option>
+                            <option value="morethan5">op4</option>
+                        </select>
+                  </td>
+                </tr>
+                
+            </tbody>
+              </table>
+             <button onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-large" >Submit</button></center>
+            </div>
+
+            
+  </div>  
+</div>
+          <!--      
+        <table class="table" border="0" width="400" style="margin-left: 120px">
+   
+    <tbody>
+      <tr>
+        <td> <div class="form-group required" >
+                <label >First Name:</label>
+      <input type="text" class="form-control" id="fname" style="width: 300px" placeholder="Enter First Name">
+    </div>
+      </td>
+        <td> <div class="form-group">
+      <label for="usr">Last Name:</label>
+      <input type="text" class="form-control" id="lname" style="width: 300px" placeholder="Enter Last Name">
+    </div>
+      </td>
+       
+      </tr>
+      <tr>
+          <td> <div class="form-group">
+      <label for="usr">E-Mail:</label>
+      <input type="text" class="form-control" id="mail" style="width: 300px;" placeholder="Enter E-Mail">
+    </div>
+      </td>
+        <td> <div class="form-group">
+      <label for="usr">Address:</label>
+      <input type="text" class="form-control" id="add" style="width: 300px; height: 70px" placeholder="Enter Address">
+    </div>
+      
+      </td>
+       
+      </tr>
+      <tr>
+        <td> <div class="form-group">
+      <label for="usr">Phone No:</label>
+      <input type="text" class="form-control" id="phone" style="width: 300px; " placeholder="Enter Phone No.">
+    </div>
+      </td>
+        <td>  <div class="form-group">
+      <label for="usr">Country</label>
+      <input type="text" class="form-control" id="address" style="width: 300px" placeholder="Enter country">
+    </div>
+      </td>
+      
+      </tr>
+      
+      <tr>
+           <td> <div class="form-group">
+      <label for="usr">Password</label>
+      <input type="text" class="form-control" id="usr" style="width: 300px" placeholder="Enter password">
+    </div>
+      </td>
+          
+        <td>  <div class="form-group">
+      <label for="pwd">Confirm Password:</label>
+      <input type="password" class="form-control" id="pwd" style="width: 300px" placeholder="Re-enter password"><br><br>
+    </div>
+      </td>
+      </tr>
+      
+    </tbody>
+  </table>
+ <button type="button" class="button"><b>Submit</b></button>
+    </div>
+  </div>	
+</div>
+ 
+ <!--       <%
+   Date date = new Date();
+   out.print( "<h2 align=\"center\">" +date.toString()+"</h2>");
+%>-->
+    </body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Stock Analysis & Prediction</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="assets/css/main.css" /> 
+		<link rel="stylesheet" href="assets/css/grid.css" /> 
+		<link rel="stylesheet" href="assets/css/animate.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+			// Load Charts and the corechart package.
+     		 google.charts.load('current', {'packages':['corechart']});
+
+     		 google.charts.setOnLoadCallback(drawBackgroundColor);
+     		 google.charts.setOnLoadCallback(drawBackgroundColor1);
+		</script>
+
+		<link href="assets/css/hover.css" rel="stylesheet" media="all">
+		<!--<link rel="stylesheet" href="assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="assets/css/bootstrap-min.css" />
+		<link rel="stylesheet" href="assets/css/bootstrap-theme.css" /> -->  
+		<link rel="icon" href="images/favicon.png"> 
+		
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<img src="images/logo.png" style="position: absolute; left: -9px; ">
+					<a href="index.html" class="logo" style="left: 72px; top: 10px; font-size: 25px; font-family: 'Special Elite', cursive""> <strong>STOCK ANALYSIS AND PREDICTION</strong> SOFTWARE</a>
+					<nav id="nav">
+						
+						<div class="tooltip hvr-wobble-horizontal"><a href="/"><img src="images/home.png"><span class="tooltiptext">Home</span></a></div>
+
+						<div class="tooltip hvr-wobble-horizontal">
+							<a href="/loginview">
+								<img src="images/login.png">
+									<span class="tooltiptext">Login</span>
+							</a>
+						</div>
+
+
+						<div class="tooltip hvr-wobble-horizontal" ><a href="/registerview"><img src="images/register.png"><span class="tooltiptext">Register</span></a></div> 				
+					
+							</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<header>
+						<div class=" animated bounceIn"><h1>Welcome to<br> SAP</h1></div>
+						<h3>"A place where you can analyze and predict your investments as per your needs."</h3>
+					</header>
+
+					<div class="flex ">
+
+						<div class="hvr-grow">
+							<!--<span class="icon fa-car"></span>-->
+							<img src="images/predict.png" style="padding-bottom: 1px">
+							<h3>Prediction</h3>
+							<p style="color: #D8E020">Know the markets where you can invest</p>
+						</div>
+
+						<div class="hvr-grow">
+							<img src="images/trends.png">
+							<h3>Trends</h3>
+							<p style="color: #D8E020">Know the currents trends in the market</p>
+						</div>
+
+						<div class="hvr-grow">
+							<img src="images/everyone.png" style="padding-bottom: 1px">
+							<h3>Designed for everyone</h3>
+							<p style="color: #D8E020">Even the naive user can use it </p>
+						</div>
+
+					</div>
+
+					<footer>
+						
+					</footer>
+				</div>
+			</section>
+
+
+<!--Tables&Charts-->
+
+  	<!--Section1-->
+		<div id="container2" style="border-bottom: 1px solid grey;">
+			<div id="container1">
+
+
+
+			<!--Column1-->
+				<div id="col1">
+
+					<script type="text/javascript">
+						google.charts.load('current', {packages: ['corechart', 'line']});
+						google.charts.setOnLoadCallback(drawBackgroundColor);
+
+						function drawBackgroundColor() {
+						      var data = new google.visualization.DataTable();
+						      data.addColumn('number', 'X');
+						      data.addColumn('number', 'BSE');
+
+						      data.addRows([[10,28000],[10.2,28020],[10.4,28005],[10.6,28025],[10.8,27975],[11,27950],[11.2,27990],[11.4,28002],[11.6,28013],[11.8,28026],[12,27999],[12.2,28019],[12.4,28040],[12.6,28011],[12.8,27989],[13,27969],[13.2,27975],[13.4,28000],[13.6,28013],[13.8,28028],[14,28009],[14.2,27990],[14.4,27977],[14.6,27999],[14.8,28015]]),[15,28020],[15.2,28001],[15.4,27991],[15.6,27982],[15.8,27969];
+
+						      var options = {
+						        hAxis: {
+						          title: 'Time'
+						        },
+						        vAxis: {
+						          title: 'Value'
+						        },
+						        backgroundColor: '#e6ffcc'
+						      };
+
+						      var chart = new google.visualization.LineChart(document.getElementById('chart_div_bse'));
+						      chart.draw(data, options);
+						    }
+
+    				</script>
+    				<div id="chart_div_bse" style="margin-top: 50px; margin-bottom: 50px;"></div>	        
+		      	</div> 
+
+		     <!--Column2-->
+		      	<div id="col2" style="text-align: justify; margin-top: 5px; margin-top: 35px;">
+					
+					<h2 style="color: #1a3300"><center>Bombay Stock Exchange</center></h2>
+
+					The <b> Bombay Stock Exchange(BSE)</b> became the first stock exchange to be recognized by the Indian Government under the Securities Contracts Regulation Act. 
+					The BSE is the world's 11th largest stock exchange with an overall market capitalization of $1.43 Trillion as of March, 2016.
+ 					More than 5500 companies are publicly listed on the BSE.
+ 					This graph represents the <b>Sensex Value</b> of BSE as on <b><dic id="date"></div></b>
+ 					<script>
+ 						var d = new Date();
+    					var n = d.getDate();
+    					var m = d.getMonth();
+    					var month;
+    					switch(m)
+    					{
+    						case 0:
+    						{
+    							month='January';
+    							break;
+    						}
+    						case 1:
+    						{
+    							month='February';
+    							break;
+    						}
+    						case 2:
+    						{
+    							month='March';
+    							break;
+    						}
+    						case 3:
+    						{
+    							month='April';
+    							break;
+    						}
+    						case 4:
+    						{
+    							month='May';
+    							break;
+    						}
+    						case 5:
+    						{
+    							month='June';
+    							break;
+    						}
+    						case 6:
+    						{
+    							month='July';
+    							break;
+    						}
+    						case 7:
+    						{
+    							month='August';
+    							break;
+    						}
+    						case 8:
+    						{
+    							month='September';
+    							break;
+    						}
+    						case 9:
+    						{
+    							month='October';
+    							break;
+    						}
+    						case 10:
+    						{
+    							month='November';
+    							break;
+    						}
+    						case 11:
+    						{
+    							month='December';
+    							break;
+    						}
+    					}
+    					var dates = n +" "+month;
+ 						document.getElementById("date").innerHTML = dates;
+ 					</script>
+        		
+		      	</div>
+
+		    </div>
+		</div> 
+
+
+<!--Section2-->
+	
+		<div id="container2" style="border-bottom: 1px solid grey; margin-bottom: 50px;">
+		
+			<div id="container1">
+
+				<!--Column1-->
+				<div id="col1" style="text-align: justify; margin-top: 5px; margin-top: 35px;">
+					<h2 style="color: #1a3300"><center>New York Stock Exchange</center></h2>
+
+					The <b>New York Stock Exchange (NYSE) </b> is by far the world's largest stock exchange by market capitalization of its listed companies at US$19.3 trillion as of June 2016.
+					The NYSE is owned by Intercontinental Exchange, an American holding company that it also lists.
+					The New York Stock Exchange provides a means for buyers and sellers to trade shares of stock in companies registered for public trading.
+
+					
+		      	</div> 
+
+		     <!--Column2-->
+		      	<div id="col2">
+					<!--<img src="images/chart1.png" class="animated bounce">-->
+					<script type="text/javascript">
+						google.charts.load('current', {packages: ['corechart', 'line']});
+						google.charts.setOnLoadCallback(drawBackgroundColor);
+
+						function drawBackgroundColor() {
+						      var data = new google.visualization.DataTable();
+						      data.addColumn('number', 'X');
+						      data.addColumn('number', 'NYSE');
+
+						      
+
+						      data.addRows([
+						      	[9.5,10365],	[9.7,10192],	[9.9,10661], [10,10560],[10.4,10773],[10.5,10600],[10.7,10683],[10.9,10745],[11,10820],
+						      	[11.1,10808], [11.2,10838], [11.5,9973], [11.6,10489], [11.9,10878], [12,10910],[12.3,11237],[12.4,11098], [12.5,11128], 
+						      	[12.7,11146],
+						      	[13.2,11172], [13.3,11246], [13.4,11169], [13.7,11339], [13.8,11205], [13.9,11310], [14,11243],
+						      	[14.1,11310], [14.2,11251], [14.5,11433], [14.6,11512], [14.8,11448], [15,11590], [15.1,11420], [15.2,11519], [15.4,11464], [15.7,11473], [15.8,11342], [15.9,11531],
+						      	[16,11536]
+						      	]);
+
+						      var options = {
+						        hAxis: {
+						          title: 'Time'
+						        },
+						        vAxis: {
+						          title: 'Value'
+						        },
+						        backgroundColor: '#e6ffcc'
+						      };
+
+						      var chart = new google.visualization.LineChart(document.getElementById('chart_div_nyse'));
+						      chart.draw(data, options);
+						    }
+					</script>
+					 <div id="chart_div_nyse" style="margin-top: 50px; margin-bottom: 50px;"></div>
+					<!--<img src="images/chart1.png" style="padding-top: 90px;"> -->
+					<div id="chart_div1"></div>
+
+								       		
+		      	</div>
+			</div>
+		      
+
+		    
+		</div>
+
+<!--Section3-->
+	<div style="margin-top: 50px;">
+		<h2 style="color: #1a3300"><center>See the current trends in various markets</center></h2>
+
+
+	</div>
+	
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+
+					<h3>Follow us</h3>
+
+					<div class="hvr-wobble-horizontal" style=" margin: 0 10px 0 10px;">
+						<a href="www.facebook.com"><img src="images/fb_icon.png"></a>
+					</div>
+
+					<div class="hvr-wobble-horizontal" style="margin: 0 10px 0 10px;">
+						<a href="www.twitter.com"><img src="images/twitter_icon.png"></a>
+					</div>
+
+					<div class="hvr-wobble-horizontal" style=" margin: 0 10px 0 10px;">
+						<a href="www.instagram.com"><img src="images/instagram_icon.png"></a>
+					</div>
+				
+
+					<div class="copyright" style="margin: 20px 0 0 0;">
+						&copy; HaHH. Design: SAF.
+					</div>
+
+				</div>
+			</footer> 
+
+			
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

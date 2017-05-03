@@ -68,12 +68,13 @@ var verify= function(db, callback) {
    console.log("count",count);
    count++;
    if(count==2&&doc==null){
+     res.redirect('/dashboard?EmailId='+req.body.EmailId);
     req.session.EmailId=req.body.EmailId;
-    res.render('afterlogin');
+   console.log('complete')
 
   }
   else if(count==1&&doc==null){
-    res.send('user id and password incorrect');
+    res.redirect('/');
   }
   
    });
