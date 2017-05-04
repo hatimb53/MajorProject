@@ -1,8 +1,8 @@
-import urllib3
+"""import urllib3
 import json
 from pprint import pprint
 http = urllib3.PoolManager()
-r = http.request('GET', 'http://chartapi.finance.yahoo.com/instrument/1.0/GOOG/chartdata;type=quote;range=1m/json')
+r = http.request('GET', 'http://chartapi.finance.yahoo.com/instrument/1.0/GOOG/chartdata;type=quote;range=1d/json')
 #print r.status
 #print str(r.data).index('(')
 #print str(r.data)[str(r.data).index('(')+1:str(r.data).index(')')]
@@ -15,4 +15,8 @@ dr=dr.replace('\"',"\'")
 dr=dr.replace('\'','\"')
 #pprint(data)
 
-print '{"data":',dr,'}'
+print '{"data":',dr,'}'"""
+
+s="234"
+s1=s.split("")
+print s1[0]

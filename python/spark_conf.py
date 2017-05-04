@@ -18,11 +18,12 @@ from pyspark import SparkContext
 from pyspark import SparkConf
 from pyspark.sql import SQLContext
 from pyspark.streaming import StreamingContext
+from pyspark.ml.linalg import Vectors
 
 
 from pyspark.ml.feature import StringIndexer
 
-class spark:
+class Spark:
 	def __init__(self):
 			
 		self.conf=SparkConf()
@@ -34,7 +35,8 @@ class spark:
 		self.sc=SparkContext('local',conf=self.conf)
 		self.ssc = StreamingContext(self.sc,2)
 		self.sqlContext=SQLContext(self.sc)
-		print "hiis"
+
+		
 
 
  

@@ -18,19 +18,20 @@ class fetch:
 			data1=json.loads(str(data))
 			for i in range(0,len(data1["series"])):
 				d=data1["series"][i]
-				print d
+				#print d
 				dr=str(d).replace("u\'","\'")
 				dr=dr.replace('\"',"\'")
 				dr=dr.replace('\'','\"')
 				#pprint(data)
-				dt=dt+dr+str(",")
-				print dt
+				dt=dt+dr+str("\n")
 				#print dt
+				#print dt
+				
 		
 	
 		
 		
-		return '{"data":[',dt[3:len(dt)-3],']}'
+		return dt[:len(dt)-1]
 
 
 
