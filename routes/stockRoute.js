@@ -49,6 +49,7 @@ console.log(req.query.symbol);
        }
        console.log("hey")
        console.log(output)
+
     res.send(output)
       
      });

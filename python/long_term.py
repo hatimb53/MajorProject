@@ -9,19 +9,20 @@ spark=Spark()
 
 #stockj=spark.sqlContext.read.json('data.json')
 
-
+def transformdata(line):
+	return line[0]
 def transform(line):
 	l=str(line[1])
 	#print l[:4],l[4:6],l[6:8]
 	return float(line[0]),Vectors.dense([float(l[:4]),float(l[4:6]),float(l[6:8])])
 
 
-
+obj='{"quote":['
 
 def evalt(label,stockqf,d):
-    
-   
 
+
+	
 
 	#close predict
     s1=stockqf.select(label,'Date').rdd
@@ -78,24 +79,33 @@ def evalt(label,stockqf,d):
 
 #print prediction value along with label and features
     #print "prediction"
-    print label," " ,prediction.select("prediction").show(prediction.select("prediction","label","features").count())
-"""
-    from pyspark.ml.evaluation import RegressionEvaluator
-# accuracy evaluation
-    evaluator=RegressionEvaluator(predictionCol="prediction",labelCol="label",metricName="rmse")
+    sr=prediction.select("prediction").rdd
+    sw=sr.map(transformdata)
+    sw.collect()
+  	
+  	
+    js='{"'+label+'":"'+str(sw.collect())+'"},'
+    tb=str(sw.collect())
+    return  tb 
+    #print "pred",pred.find("|",2)
+  
+    
+   
+targ =open('file.html', 'r')
 
-    print("Accuracy")
-    print evaluator.evaluate(prediction)
-"""
-
-
+tbl=targ.read()
 import datetime
 
 	
 def predict(duration,interval):
-	print duration," ",interval
+	global obj,tbl
+	#print duration," ",interval
+	tbl=tbl+'<h1>'+duration+'('+interval+')</h1>'
+	tbl=tbl+'<table><tbody><tr><th>close</th><th>open</th><th>high</th><th>low</th></tr></tbody>'
+
+	obj=obj+'{"'+duration+'":['
 	stockq=ft.fetchData(interval,sys.argv[1])
-	target = open('data.json', 'w')
+	target =open('data.json', 'w')
 	target.write(stockq)
 	target.close()
 	now = datetime.datetime.now()
@@ -115,15 +125,37 @@ def predict(duration,interval):
 	
 	jsn=spark.sqlContext.read.json('data.json')
 	#print jsn.show()
-	evalt("close",jsn,d)
-	evalt("open",jsn,d)
-	evalt("high",jsn,d)
-	evalt("low",jsn,d)
+	"""obj=obj+evalt("close",jsn,d)
+	
+	obj=obj+evalt("open",jsn,d)
+
+	obj=obj+evalt("high",jsn,d)
+	obj=obj+evalt("low",jsn,d)"""
+
+	obj=obj[:len(obj)-1]+"]},"
+	tbl=tbl+'<tr>'
+
+	tbl=tbl+'<td>'+evalt("close",jsn,d)+'</td>'
+	
+	tbl=tbl+'<td>'+evalt("open",jsn,d)+'</td>'
+
+	tbl=tbl+'<td>'+evalt("high",jsn,d)+'</td>'
+	tbl=tbl+'<td>'+evalt("low",jsn,d)+'</td>'
+
+	tbl=tbl+'</tr></table>'
+
+
+	obj=obj[:len(obj)-1]+"]},"
 
 
 predict("short_term","3m")
 predict("mid_term","1y")
 predict("long_term","3y")
+obj=obj[:len(obj)-1]+"]}"
+
+tbl=tbl+'</body></html>'
+
+print tbl
 
 
 
