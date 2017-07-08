@@ -1,8 +1,7 @@
 import os
 import sys
 
-os.chdir("/home/hatim/Documents/workspace/MajorProject/python")
-os.curdir
+
 
 if 'SPARK_HOME' not in os.environ:
     os.environ['SPARK_HOME']='/usr/local/spark'

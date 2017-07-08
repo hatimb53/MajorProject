@@ -67,13 +67,13 @@ var verify= function(db, callback) {
    console.log("doc",doc);
    console.log("count",count);
    count++;
-   if(count==2&&doc==null){
+   if(count==1&&doc==null){
      res.redirect('/dashboard?EmailId='+req.body.EmailId);
     req.session.EmailId=req.body.EmailId;
    console.log('complete')
 
   }
-  else if(count==1&&doc==null){
+  else if(count==0&&doc==null){
     res.redirect('/');
   }
   

@@ -3,8 +3,19 @@ var express=require('express');
 var router=express.Router();
 var path=require('path');
 
+var remote = require('remote'); 
+var win = remote.getCurrentWindow();
+
 
 router.get("/",function(req,res,next){
+	var s=""
+	var p=__dirname.split("/")
+	for(var i=0;i<p.length-1;i++){
+		s+=p[i]+"/"
+	console.log(s)
+	}
+	
+	console.log(s)
 res.render('index.html')
 });
 
