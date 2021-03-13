@@ -1,5 +1,5 @@
 # Stock-Market-Analysis-And-Prediction
-The stock market analyser and predictor is the web application which is used to analyze
+The stock market analyser and predictor is the web application which analyze
 and predict the future performance of the stocks.  
 It consists following two parts
 1. Getting real time quote of public listed companies such as (high,low,open,close) price
